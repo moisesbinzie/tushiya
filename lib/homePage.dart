@@ -1,11 +1,40 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: ListView(
         children: <Widget>[
+          CarouselSlider(
+            items: [
+//! this carousel will slide any widget contained
+              // Container(child: Text('data'),),
+              Image.asset('assets/carousel/ca1.png'),
+              Image.asset('assets/carousel/ca2.png'),
+              Image.asset('assets/carousel/ca3.png'),
+              //liveClock(),
+            ],
+            options: CarouselOptions(
+              height: size.height * 1 / 3,
+              aspectRatio: 16 / 9,
+              viewportFraction: 0.8,
+              initialPage: 0,
+              enableInfiniteScroll: true,
+              reverse: false,
+              autoPlay: true,
+              pauseAutoPlayOnTouch: true,
+              autoPlayInterval: Duration(seconds: 3),
+              autoPlayAnimationDuration: Duration(milliseconds: 800),
+              autoPlayCurve: Curves.fastOutSlowIn,
+              //   pauseAutoPlayOnTouch: Duration(seconds: 10),
+              enlargeCenterPage: true,
+              scrollDirection: Axis.horizontal,
+            ),
+          ),
+
           Text('''
           
           Step by Step Guide Course
